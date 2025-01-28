@@ -11,18 +11,34 @@
 </head>
 <body>
     <h2 id="game-status"></h2>
-    <div class="board">
-        <div class="cell top left" id="00"></div>
-        <div class="cell top" id="01"></div>
-        <div class="cell top right" id="02"></div>
-
-        <div class="cell left" id="10"></div>
-        <div class="cell middle" id="11"></div>
-        <div class="cell right" id="12"></div>
-
-        <div class="cell bottom left" id="20"></div>
-        <div class="cell bottom" id="21"></div>
-        <div class="cell bottom right" id="22"></div>
+    <div class="content">
+        <div class="change-name">
+            <form id="name_1">
+                <fieldset>
+                    <label for="name-1">Change Player 1's name</label>
+                    <input id='name-1' name='name' type="text">
+                    <button>Submit</button>
+                </fieldset>
+            </form>
+            <form id="name_2">
+                <fieldset>
+                    <label for="name-2">Change Player 2's name</label>
+                    <input id='name-2'name='name' type="text">
+                    <button>Submit</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="board">
+            <div class="cell top left" id="00"></div>
+            <div class="cell top" id="01"></div>
+            <div class="cell top right" id="02"></div>
+            <div class="cell left" id="10"></div>
+            <div class="cell middle" id="11"></div>
+            <div class="cell right" id="12"></div>
+            <div class="cell bottom left" id="20"></div>
+            <div class="cell bottom" id="21"></div>
+            <div class="cell bottom right" id="22"></div>
+        </div>
     </div>
     <button id="reset-game">Reset Game</button>
     <script src="script.js"></script>

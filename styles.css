@@ -3,9 +3,28 @@
     font-family: "Smooch Sans", sans-serif;
 }
 
+.content {
+    position: relative;
+}
+
+.change-name {
+    position: absolute;
+    max-width: 200px;
+    top: 0;
+    right: 600px;
+    left: 0;
+    margin-inline: auto;
+}
+.change-name form {
+    margin-block: 20px;
+}
+.change-name form fieldset input {
+    margin-top: 10px;
+}
+
 .board {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
     max-width: 300px;
     margin: 50px auto;
@@ -28,7 +47,7 @@
     border: 2px solid black;
 }
 
-button {
+#reset-game {
     padding: 10px 50px;
     font-size: 1.5rem;
     border-radius: 5px;

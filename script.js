@@ -1,5 +1,6 @@
 const cell = document.querySelectorAll('.cell');
 const gameStatus = document.querySelector('#game-status');
+const form = document.querySelectorAll('form');
 
 const gameBoard = (function() {
     let board = [
@@ -80,8 +81,6 @@ const Player = function(name, symbol, wins=0) {
 }
 
 const playGame = (function() {
-    // const playerOne = Player(prompt('Enter player 1 name:'), 'X');
-    // const playerTwo = Player(prompt('Enter player 2 name:'), 'O');
 
     const playerOne = Player('player1', 'X');
     const playerTwo = Player('player2', 'O');
@@ -92,7 +91,23 @@ const playGame = (function() {
     const switchPlayers = () => curPlayer = curPlayer == players[0] ? players[1] : players[0];
     const getCurPlayer = () => curPlayer;
 
+
     gameStatus.textContent =`Game started between ${playerOne.name} and ${playerTwo.name}! Currently ${curPlayer.name}'s turn (${curPlayer.symbol})`;
+
+    form.forEach((f) => {
+        f.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = e.target.name;
+
+            if (input.id[input.id.length-1] == 1) {
+                playerOne.name = input.value;
+            }
+            else {
+                playerTwo.name = input.value
+            }
+            input.value = '';
+        })
+    });
 
     cell.forEach(c => {
         c.addEventListener('click', ({target}) => {
